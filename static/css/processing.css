@@ -1,0 +1,109 @@
+  *{
+    margin : 0px;
+    padding : 0px;
+    box-sizing : border-box;
+    font-family: 'Marmelad',sans-serif;
+  }
+  body{
+    background : #9CD4FFD4;
+    align-items: center;
+    animation: smooth-load 3s ease forwards;
+    
+  }
+  .main-content {
+  height: 100vh;
+  }
+  
+  .status-box{
+    height : auto;
+    width : 90vw;
+    background : #5AC1FF47;
+    justify-self: center;
+    margin-top: 20vh;
+    border: none;
+    border-radius: 4vh;
+    padding: 2vh 4vw;
+    text-align: left;
+  }
+  .inner-box{
+    height : auto;
+    width : auto;
+    border: none;
+    border-radius: 3vh;
+    padding: 2vh 4vw;
+    text-align: left;
+    background :#FFFFFF;
+    word-break: break-all;
+  }
+  p{
+    display: inline;
+    font-size: 2vh;
+  }
+  .buttons{
+    height:10vh;
+    width : 100vw;
+    background :none;
+    justify-self: center;
+    margin-top: 5vh;
+    padding : 2vh 5vw;
+    visibility: hidden;
+    /*animation: smooth-load 2s ease forwards;*/
+  }
+  .preview-button {
+    display : inline-block;
+    float: left;
+  }
+  .preview-button a{
+    color:#000000;
+    text-decoration: none;
+    width:auto;
+    height : auto;
+    border:none;
+    border-radius:2vh;
+    padding : 1vh 4vw;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    font-family: "Roboto",sans-serif;
+    background : linear-gradient(55deg,#FF2C00,#FF6F00,#FF2C00);
+    box-shadow: 0 0 2vh #FF5A00,
+                0 0 5vh #FF0000;
+  }
+  .download-button{
+    display : inline-block;
+   float: right;
+  }
+  .download-button a{
+    color:#000000;
+    text-decoration: none;
+    width:auto;
+    height : auto;
+    border:none;
+    border-radius:2vh;
+    padding : 1vh 3vw;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    font-family: "Roboto",sans-serif;
+    background : linear-gradient(55deg,#1D8500,#00BA51,#1D8500);
+    box-shadow: 0 0 2vh #00CF5A,
+                0 0 5vh #1D8500;
+  }
+  @keyframes smooth-load{
+    from{
+        opacity : 0;
+    }
+    to{
+      opacity ; 1;
+    }
+  }
+  @keyframes loading{
+  0%{content: '';}
+  20%{content: '.';}
+  40%{content : '..'}
+  60%{content: '...'}
+  80%{content : '....'}
+  100%{content : '.....'}
+}
+.loading::after{
+  content: '';
+  animation: loading 1.5s steps(5, end) infinite;
+}

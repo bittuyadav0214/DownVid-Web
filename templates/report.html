@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href={{url_for("static",filename="css/common.css")}} >
+{% endblock %}
+
+{% block title %} Report Me {% endblock %}
+{% block extra_css %}
+ 
+  <style>
+  .thanks,.requirements{
+  width:95%;
+  margin-top: 15vh;
+  text-align: left;
+  padding: 3em 1.5em;
+  background: #F4FBFF;
+  border-radius:2em;
+  justify-self: center;
+}
+
+.report{
+    width:95%;
+  margin-top: 15vh;
+  text-align: left;
+  padding: 3em 1.5em;
+  background: #61A4F1;
+  border-radius:2em;
+  justify-self: center;
+}
+.report label{
+  font-size: 1rem;
+}
+.report input{
+  width :100%;
+  height:2rem;
+  margin-bottom: 0.5rem;
+  padding: 2%;
+  text-align:left;
+  border-radius: 1.2rem;
+  outline : none;
+  border: none;
+  font-size:1rem;
+}
+
+#description{
+  width:100%;
+  padding:1rem;
+  font-size:1rem;
+  border: none;
+  border-radius: 1rem;
+}
+#button{
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  font-size:1.5rem;
+  margin-top: 0.5rem;
+  padding :0.5rem;
+  font-weight: bolder;
+  border:0.1rem solid #000000 ;
+  border-radius: 1rem;
+  width:7rem;
+  background: #3700FF;
+  height:auto;
+}
+</style>
+
+{% endblock %}
+
+{% block main_content %}
+  <div class="main-content">
+      
+      <div class="thanks">
+        <p>
+          Firstly,a lot of thanks to you for using my service and I hope you use this service happily.I am not a that much master programmer,I am in school and I made this service for learning purpose.I am a beginner programmer so bugs and problems are common.If you find any bugs,errors or problems in my service then please report me it, I will reply you very soon and solve your problems.I again thanks you for reporting me!.
+        </p>
+      </div>
+      
+      <div class="requirements">
+        <h1 style="font-size: 1rem;border-bottom:0.2rem solid black;text-align: center; padding-bottom: 0.1rem;border-radius: 0.5rem;">
+          Requirements for reporting me
+        </h1>
+        <p>To report me anything you have to must send the following requirements to me in mail otherwise your report will not accept and valuated.The requirements are following:</p>
+        <br>
+        <p>
+          1.Name
+        <br>
+        2.Email ID
+        <br>
+        3.Phone number
+        <br>
+        4.Report date and time
+        <br>
+        5.Country
+        <br>
+        6.State
+        <br>
+        7.Password 
+        <br>
+        </p>
+        <br>
+        <p>***No dear Password not required,it is just for fun 😄.</p>
+      </div>
+      
+      
+      <div class="report">
+         <h1 style="font-size: 2rem;border-bottom:0.2rem solid black;text-align: center; padding-bottom: 0.1rem;border-radius: 0.2rem;">
+          Report
+        </h1>
+        <br>
+        
+        <form id="reportForm">
+          
+        <label for="name">Enter your name</label><br>
+        <input id="name" class="Name" type="text" autocomplete="name" required><br>
+        <label for="email">Enter your email ID</label><br>
+        <input type="email" id="email"  placeholder="example123@gmail.com" required><br>
+        <label for="ph">Phone no. with country code</label><br>
+        <input type="phone" id="ph"  placeholder="+91XXXXXXXXXX" required><br>
+        <label for="cntry">Country name</label><br>
+        <input type="text" id="cntry" required><br>
+        <label for="state">State name</label><br>
+        <input type="text" id="state" required><br>
+        <label for="dt">Date and time</label><br>
+        <input type="datetime-local" id="dt" required><br>
+        <label for="description">Description</label><br>
+        <textarea id="description" placeholder="Enter your message here..." rows=6 required></textarea>
+        <input type="submit" value="Submit" id="button">
+        </form>
+        
+    </div>
+    </div>
+  
+    <menu>
+    <div class="menu-content">
+      <div class="option">
+      <ul class="list">
+        <li><a href="/" target="_blank">Home<me/a></li>
+          <li><a href="/#use" onclick="changeMenu()">How to use</a></li>
+        <li><a href={{url_for("about")}} target="_blank"></textarea>About Me</a></li>
+        <li><a href={{url_for("contact")}} target="_blank">Contact Me</a></li>
+        <li><a href={{url_for("report")}} target="_blank">Report Me</a></li>
+      </ul>
+    </div>
+    </div>
+    
+  </menu>
+
+{% endblock %}
+
+{% block script %}
+<script src={{url_for('static', filename="js/common.js")}} ></script>
+{% endblock %}   
+      

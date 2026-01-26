@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href={{url_for("static",filename="css/common.css")}} >
+{% endblock %}
+
+{% block title %} Not Found {% endblock %}
+
+
+{% block main_content %}
+<div class="main-content">
+<img src="{{url_for("static",filename="images/meme.png")}}" class="emoji">
+  <audio src="{{url_for("static",filename="audios/meme.mp3")}}" id="audio" loop></audio><br>
+  <button id="audioButton" onclick="playAudio()">Play Sound </button>
+<div class="not-found-content">
+<h1>[Page not found] <h1>
+<h4>The resources you requested are not found on the server.</h4>
+</div>
+</div>
+  
+  <menu>
+    <div class="menu-content">
+      <div class="option">
+      <ul class="list">
+        <li><a href="/" target="_blank">Home<me/a></li>
+          <li><a href="/#use" onclick="changeMenu()">How to use</a></li>
+        <li><a href={{url_for("about")}} target="_blank"></textarea>About Me</a></li>
+        <li><a href={{url_for("contact")}} target="_blank">Contact Me</a></li>
+        <li><a href={{url_for("report")}} target="_blank">Report Me</a></li>
+      </ul>
+    </div>
+    </div>
+    
+  </menu>
+
+{% endblock %}
+
+{% block script %}
+<script src={{url_for('static', filename="js/common.js")}} ></script>
+<script>
+function playAudio(){
+  let audio = document.getElementById('audio');
+  audio.play();
+  
+}
+</script>
+{% endblock %}   
+      

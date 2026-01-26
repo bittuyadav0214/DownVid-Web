@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block css%}
+<link rel="stylesheet" href={{url_for("static",filename="css/processing.css")}}>
+<link rel="stylesheet" href={{url_for("static",filename="css/common.css")}}>
+{% endblock %}
+{% block title %} Processing Status {% endblock %}
+
+{% block main_content %}
+<div class="main-content">
+  <div class="status-box">
+    <strong>
+      <div class="inner-box">
+         <h2 class="status" style="justify-self: center;">Download like a smart </h2><hr>
+         <br>
+         
+         <p style="color:magenta">URL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;:</p>
+         <p id="url"></p>
+         <br><br>
+          <p style="color:#9200FF">Format :</p>
+         <p id="format"> </p>
+         <br>
+           <p style="color:red">Valid &nbsp;&nbsp;&thinsp; :</p>
+         <p id="valid"></p>
+      
+         <br>
+        <p style="color:blue">Title &nbsp;&nbsp;&nbsp;&thinsp;:</p>
+         <p id="title"> </p>
+         <br>
+        
+            <p style="color:green">Status &thinsp;:
+         <p id="status"> Please wait</p><span class="loading"></span>
+      </div>
+    
+    </strong>
+  </div>
+  
+  <div class="buttons">
+    <div class="preview-button">
+      <a href="/content/preview/{{uid}}">Preview</a>
+    </div>
+    <div class="download-button">
+      <a href="/content/download/{{uid}}">Download</a>
+    </div>
+  </div>
+  </div>
+  
+
+  <menu>
+    <div class="menu-content">
+      <div class="option">
+      <ul class="list">
+        <li><a href="/" target="_blank">Home<me/a></li>
+          <li><a href="/#use" onclick="changeMenu()">How to use</a></li>
+        <li><a href={{url_for("about")}} target="_blank"></textarea>About Me</a></li>
+        <li><a href={{url_for("contact")}} target="_blank">Contact Me</a></li>
+        <li><a href={{url_for("report")}} target="_blank">Report Me</a></li>
+      </ul>
+    </div>
+    </div>
+    
+  </menu>
+  
+  {% endblock %}
+  
+{% block script %}
+<script src={{url_for("static",filename="js/common.js")}}></script>
+
+<script>
+  const url = document.getElementById('url');
+  const status = document.getElementById('status');
+  const buttons = document.querySelector('.buttons');
+  const title = document.getElementById('title');
+  const valid = document.getElementById('valid');
+  const format= document.getElementById('format');
+  const loading = document.querySelector('.loading');
+  
+    
+const source = new EventSource("/process/stream/{{uid}}");
+source.onmessage = function(event){
+       let data=JSON.parse(event.data);
+       
+       if (data.status){
+            status.innerText=data.status;
+            if(data.status === "Complete✅"){
+                      loading.style.display= "none";
+                      buttons.style.visibility="visible";
+                      buttons.style.animation="smooth-load 5s ease forwards";
+                      }
+            if(data.status === "Failed❌"){
+                 loading.style.display = "none";
+                 setTimeout(function(){
+                 window.location.href = "/";
+                 },2000);
+            
+                   }
+                 
+           if (data.url) url.innerText = data.url;
+           if(data.format) format.innerText=data.format;
+           if(data.validity) valid.innerText = data.validity;
+           if(data.title) title.innerText = data.title;
+       
+     }
+   }
+       </script>
+{% endblock %}

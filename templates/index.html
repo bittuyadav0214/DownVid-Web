@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href={{url_for('static',filename="css/style.css")}} >
+{% endblock %}
+
+{% block title %} DownVid-Home {% endblock %}
+{% block main_content %}
+
+ <div class="main-wait" style="display:none"><div class="waiting"> <h1>Please wait...</h1></div></div>
+ <div class="main-content">
+  
+  <div class=typewriter>
+  <span class="typewrite" data-period="2000" data-type='["Radhe Radhe ❤️","Created by Bittu Yadav","Download audio and video for free.","Report any problem!!"]'>
+    <span class='wrap'></span>
+  </span>
+  </div>
+  
+  
+  <div class="info">
+    <p>DownVid is a tool that download the youtube video in both audio and video format.The downloaded files save at your default downloads folder.The videos are download at best resolution like 720p,360p and 480p</p>
+  </div>
+  
+  
+  <content class="content">
+    <!-- YouTube Gui-->
+    <div class ="youtube-parent">
+      
+      <form id='form' method="POST" action={{url_for("processing")}}>
+    <div class="youtube-box">
+      
+      <h2>Download with DownVid</h2>
+      <p>Download YouTube video in .mp3 and .mp4 format online.</p>
+      
+      
+    <input type="text" placeholder="Enter or paste the URL of video" class="url" name='url' required>
+    
+    
+    <div class ="format">
+    <select name="format" required>
+      <option value="audio">Audio</option>
+      <option value="video" selected>Video </option>
+    </select>
+    
+    
+      <input type="submit" value="Download" id="button" class="Download">
+      </form>
+    
+    </div>
+    </div>
+    </div>
+    
+  </content>
+  
+  <div class="description">
+    <p>Youtube is a large platform that provides a lot of content to the users.It is one of the popular platform.Youtube ask for payment if a user want to download a conten even that downloads do not come in local storage.</p>
+    <br>
+    <p>For this solution,I create my tool DownVid to solve this problem.It download the video for free just by link and also save it in local storage of user.Enjoy my service and if any problem there then please report.So finally a lot of thanks to you for using my service and tool DownVid.</p>
+  </div>
+  <div class="use" id="use">
+    <h1 style="font-size: 1.5rem;">How to use DownVid :</h1>
+    <br>
+    <p>1.Go to YouTube video and copy link.</p><br>
+    <p>2.Open DownVid</p>
+    <br>
+    <p>3.Paste link in URL field</p>
+    <br>
+    <p>4.Select the format </p>
+    <br>
+    <p>5.Click on "Download" button.</p>
+  </div>
+  
+  {% endblock %}
+  
+  {% block script %}
+ 
+  <script src={{url_for('static',filename='js/common.js')}}></script>
+  <script>
+  document.getElementById('form').addEventListener("submit",function(f){
+            f.preventDefault();
+            fetch("/processing",{
+            method : "POST",
+            body : new FormData(this)
+            }).then(res => res.json())
+            .then(data =>{
+            let uid = data.job_id;
+            window.location.href = "/process/status/"+uid;
+            });
+        })
+     </script>
+  
+  {% endblock %}

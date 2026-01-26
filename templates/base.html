@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block css %}        {% endblock %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marmelad&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>{% block title %}     {% endblock %}</title>
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+{% block header %}
+  <div class='head'>
+    <h1>DownVid</h1>
+    <h1 onclick="changeMenu()">MENU</h1>
+  </div>
+  {% endblock %}
+  
+  {% block main_content %}
+  {% endblock %}
+  
+  {% block footer %}
+  <footer>
+    <div class="main-footer">
+      <h1 style="text-align:center">More about DownVid</h1><br>
+      <h4>Owner: Bittu Yadav</h4>
+      <h4>Github: bittuyadav0214</h4>
+      <h4>Instagram: bittu.yadav0214</h4>
+      
+      <br><h1 style="text-align: center;text-decoration: underline;">Follow me on </h1><br>
+        <div class="follow">
+        <a href="https://www.instagram.com/bittu.yadav0214" target="_blank">
+          <img src={{url_for('static',filename="images/5cae71db70b9ec562c434d8ba79bcecb-removebg-preview.png")}} class="logo1">
+        </a>
+         <a href="https://github.com/bittuyadav0214/" target="_blank">
+          <img src={{url_for('static',filename="images/github-512.png")}} class="logo2">
+        </a>
+      </div>
+    </div>
+  </footer>
+  </div>
+  
+  
+  <menu>
+    <div class="menu-content">
+      <div class="option">
+      <ul class="list">
+        <li><a href="/" target="_blank">Home<me/a></li>
+          <li><a href="/#use" onclick="changeMenu()">How to use</a></li>
+        <li><a href={{url_for("about")}} target="_blank"></textarea>About Me</a></li>
+        <li><a href={{url_for("contact")}} target="_blank">Contact Me</a></li>
+        <li><a href={{url_for("report")}} target="_blank">Report Me</a></li>
+      </ul>
+    </div>
+    </div>
+  </menu>
+  
+  {% endblock %}
+</body>
+{% block script %} {% endblock %}
+</html>

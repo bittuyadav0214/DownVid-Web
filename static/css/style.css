@@ -1,0 +1,356 @@
+
+*{
+  margin:0px;
+  padding : 0px;
+  box-sizing: border-box;
+  font-family: 'Marmelad', sans-serif;
+}
+
+@media(max-width: 600px){
+  body{
+    background: #D1EBFF;
+  font-family: 'Marmelad',sans-serif;
+  text-align : center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size:16px;
+  }
+}
+
+@media (min-width:601px) and (max-width: 1024px){
+  body{
+  background: #D1EBFF;
+  font-family: 'Marmelad',sans-serif;
+  text-align : center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size:18px;
+}
+}
+
+@media (min-width:1025px){
+  body{
+  background: #D1EBFF;
+  font-family: 'Marmelad',sans-serif;
+  text-align : center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: 20px;
+}
+}
+
+.main-content{
+  display: block;
+}
+/*header */
+.head{
+  background :#4CA5FF;
+  border :0.1em solid blue ;
+  text-align : center;
+  display : flex;
+  flex-direction: row;
+  padding : 0.3rem 0.6em;
+  width : 100vw;
+  height : auto;
+  align-items: center;
+  position:fixed;
+  z-index: 1000;
+  top:0;
+  left:0;
+}
+/*Log0. */
+.head h1:nth-child(1){
+  display: inline-block;
+  color : white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+}
+
+/* option */
+
+.head h1:nth-child(2){
+  border: 0.2em solid #FFFFFF;
+  border-radius: 0.4em;
+  color:white;
+  display: inline-block;
+  margin-left: auto;
+  font-size : 1em;
+  padding:0.2em;
+}
+
+/*typewriter*/
+
+.typewriter{
+  margin-top: 20vh;
+  height:10vh;
+  width : 80vw;
+  justify-self: center;
+}
+.typewrite > .wrap{
+  margin-top:5vh;
+  color : #000000;
+  font-size: 1.6em;
+  border-right:0.08em solid #000000;
+}
+
+
+/*info-box*/
+
+.info{
+  border-radius : 1em;
+  margin-top:1vh;
+  padding : 0.8em;
+  text-align:left;
+  align-items: center;
+  width : 90vw;
+  overflow: auto;
+  overflow-wrap: break-word;
+  background : #F4FBFF;
+  color: #000000;
+  justify-self: center;
+  font-size: 1.2em;
+}
+
+/*youtube-box*/
+
+.youtube-parent{
+  background: #4C7AFF;
+  padding:1.3vh 2vw;
+  width :100vw;
+  height:auto;
+  margin-top: 5vh;
+}
+.youtube-box{
+  border-radius:1.3em;
+  text-align:center;
+  width :90vw;
+  justify-self:center;
+  font-size:1em;
+  margin-top: 1vh;
+  padding:1em;
+  background: #d1ebff;
+  margin-bottom: 10%;
+  margin-top: 10%;
+}
+.youtube-box > .url{
+  width:98%;
+  height:4em;
+  font-size: 1em;
+  color:#000000;
+  display: block;
+  margin-top: 5%;
+  padding : 0.1em;
+  text-align: center;
+  outline:none;
+  border:none;
+  border-radius:2.5em;
+  background: #FFFFFF;
+}
+/*youtube-format*/
+
+.format{
+  position: relative;
+}
+
+.format select{
+  margin-top:5%;
+  height:4em;
+  width:98%;
+  color:#000000;
+  background :#FFFFFF;
+  font-size: 1em;
+  text-align: center;
+  padding:1em;
+  outline:none;
+  border :none;
+  border-radius:2.5em;
+  font-weight: bolder;
+  font-style: none;
+  text-decoration: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-transition-property: none;
+  transition-property: none;
+}
+
+.format::after{
+  content: "▼";
+  position:absolute;
+  top:15%;
+  right :5%;
+  font-size: 1.8em;
+  pointer-events: none;
+  color:#000000;
+}
+/*download*/
+.Download{
+  height:3em;
+  width:60%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  font-size:1.3em;
+  padding:1em;
+  text-align: center;
+  background :#5BB2FF;
+  outline :none;
+  border:0.08em solid #009BFF;
+  border-radius: 2em;
+  
+}
+/* description*/
+
+.description{
+  width:95%;
+  margin-top: 15vh;
+  text-align: left;
+  padding: 3em 1.5em;
+  background: #F4FBFF;
+  border-radius:2em;
+  justify-self: center;
+}
+
+/* Use */
+.use{
+  width:95%;
+  margin-top: 15vh;
+  text-align: left;
+  padding: 3em 1.5em;
+  background: #F4FBFF;
+  border-radius:2em;
+  justify-self: center;
+}
+
+/* footer */
+
+.main-footer{
+  margin-top: 15vh;
+  padding:5vh 5vw;
+  background :#000000;
+  text-align:left;
+  font-family: sans-serif;
+  font-size:2vh;
+  color:#FFFFFF;
+}
+.main-footer h4{
+font-size:2vw;
+}
+
+/*follow*/
+
+.follow{
+  justify-items: center;
+  text-align:center;
+  align-items: center;
+  gap: 50%;
+}
+.logo1{
+  border-radius: 50%;
+  height:auto;
+  width:10%;
+  filter: brightness(0) saturate(100%) invert(49%) sepia(30%) saturate(2900%) hue-rotate(185deg);
+}
+.logo2{
+  border-radius: 30%;
+  height:auto;
+  width:5%;
+  filter: brightness(0) saturate(100%) invert(49%) sepia(80%) saturate(2900%) hue-rotate(185deg);
+  margin-bottom: 2%;
+}
+
+
+/* Menu */
+
+.menu-content{
+  display :none;
+  background: #000000;
+  color:#FFFFFF;
+  height:100vh;
+  width:100vw;
+  padding-top: 10vh;
+  padding-right:2vw;
+  text-align:center;
+  z-index: -2;
+  position :fixed;
+}
+.menu-content .option{
+  justify-self:right;
+  text-align:left;
+  color:#FFFFFF;
+  font-size:1rem;
+}
+
+.list{
+  color:#FFFFFF;
+  list-style: disc;
+}
+
+li a{
+  color:#FFFFFF;
+  text-decoration: none;
+
+}
+li a:hover{
+  color:#3482FF;
+}
+li::marker{
+  color:#FFFFFF;
+  font-size:1.3em;
+}
+
+
+
+
+/* logic */
+
+.main-content, .menu-content {
+  transition: opacity 2s ease,visibility 3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+ .main-wait{
+            display : none;
+            width:100vw;
+            height:100vh;
+            background : #000000F0;
+            top:0%;
+            left : 0%;
+            position : fixed;
+            z-index:1001
+            }
+ .waiting{
+            height:auto;
+            width : 78vw;
+            background : #5800FFC4;
+            z-index:1002;
+            justify-content: center;
+            text-align: center;
+            padding : 25px;
+            display:flex;
+            border : 2px solid #3700FFF7;
+            border-radius: 20px;
+            position: fixed;
+            top :38%;
+            left: 10%;
+            animation: wait 5s infinite;
+        }
+        @keyframes wait{
+            0%{
+                background : #5800FFE8;
+            }
+            50%{
+                background : #0077D9E6;
+            }
+            100%{
+                background : #5800ffe8;
+            }
+        }            

@@ -1,0 +1,222 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Marmelad', sans-serif;
+}
+
+body{
+  background:#D1EBFF;
+  text-align:center;
+  font-size:16px;
+  padding-top:70px; /* fixed header space */
+}
+
+/* ================= HEADER ================= */
+.head{
+  background:#4CA5FF;
+  border:0.1em solid blue;
+  display:flex;
+  flex-direction:row;
+  padding:0.5rem 1rem;
+  width:100%;
+  align-items:center;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+}
+
+.head h1:nth-child(1){
+  color:white;
+  font-weight:bold;
+}
+
+.head h1:nth-child(2){
+  border:0.2em solid #fff;
+  border-radius:0.4em;
+  color:white;
+  margin-left:auto;
+  font-size:1em;
+  padding:0.3em 0.6em;
+}
+
+/* ================= TYPEWRITER ================= */
+.typewriter{
+  margin-top:10vh;
+  height:auto;
+  width:90%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.typewrite > .wrap{
+  color:#000;
+  font-size:1.5em;
+  border-right:0.08em solid #000;
+}
+
+/* ================= INFO ================= */
+.info{
+  border-radius:1em;
+  margin:2vh auto;
+  padding:1em;
+  text-align:left;
+  width:90%;
+  background:#F4FBFF;
+  font-size:1.1em;
+}
+
+/* ================= YOUTUBE BOX ================= */
+.youtube-parent{
+  background:#4C7AFF;
+  padding:2vh 2vw;
+  width:100%;
+}
+
+.youtube-box{
+  border-radius:1.3em;
+  text-align:center;
+  width:95%;
+  margin:5vh auto;
+  padding:1.2em;
+  background:#d1ebff;
+}
+
+.youtube-box .url,
+.format select{
+  width:100%;
+  height:3.5em;
+  border-radius:2em;
+  border:none;
+  outline:none;
+  font-size:1em;
+  text-align:center;
+  margin-top:1em;
+}
+
+.format{
+  position:relative;
+}
+
+.format::after{
+  content:"▼";
+  position:absolute;
+  top:40%;
+  right:5%;
+  pointer-events:none;
+}
+
+.Download{
+  height:3em;
+  width:70%;
+  margin:1.5em auto;
+  font-size:1.2em;
+  background:#5BB2FF;
+  border:0.08em solid #009BFF;
+  border-radius:2em;
+}
+
+/* ================= CONTENT BOXES ================= */
+.description,
+.use{
+  width:95%;
+  margin:10vh auto;
+  text-align:left;
+  padding:2em 1.5em;
+  background:#F4FBFF;
+  border-radius:2em;
+}
+
+/* ================= FOOTER ================= */
+.main-footer{
+  margin-top:10vh;
+  padding:5vh 5vw;
+  background:#000;
+  text-align:left;
+  color:#fff;
+  font-size:1em;
+}
+
+.follow{
+  text-align:center;
+}
+
+.logo1{width:12%;}
+.logo2{width:7%;}
+
+/* ================= MENU ================= */
+.menu-content{
+  display:none;
+  background:#000;
+  color:#fff;
+  height:100vh;
+  width:100vw;
+  padding-top:10vh;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:999;
+}
+.list{
+text-align:right;
+}
+.list{color:#fff;}
+li a{color:#fff;text-decoration:none;}
+li a:hover{color:#3482FF;}
+
+/* ================= WAITING OVERLAY ================= */
+.main-wait{
+  display:none;
+  width:100vw;
+  height:100vh;
+  background:#000000F0;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1001;
+}
+
+.waiting{
+  width:80%;
+  background:#5800FFC4;
+  padding:25px;
+  border:2px solid #3700FFF7;
+  border-radius:20px;
+  position:fixed;
+  top:40%;
+  left:10%;
+  animation:wait 5s infinite;
+}
+
+@keyframes wait{
+  0%{background:#5800FFE8;}
+  50%{background:#0077D9E6;}
+  100%{background:#5800FFE8;}
+}
+
+/* ================= MEDIA QUERIES ================= */
+
+/* Mobile */
+@media (max-width:600px){
+  body{font-size:14px;}
+  .head h1{font-size:1.1em;}
+  .typewrite>.wrap{font-size:1.3em;}
+  .Download{width:85%;}
+}
+
+/* Tablet */
+@media (min-width:601px) and (max-width:1024px){
+  body{font-size:16px;}
+  .head h1{font-size:1.3em;}
+  .typewrite>.wrap{font-size:1.6em;}
+  .Download{width:70%;}
+}
+
+/* Desktop */
+@media (min-width:1025px){
+  body{font-size:18px;}
+  .head h1{font-size:1.6em;}
+  .typewrite>.wrap{font-size:1.9em;}
+  .Download{width:50%;}
+}
