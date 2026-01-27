@@ -164,20 +164,21 @@ document.getElementById("reportForm").addEventListener("submit", function(e) {
     let dateTime = document.getElementById("dt").value;
     let desc = document.getElementById("description").value;
 
-    let body =
-        "Name: " + name + "%0D%0A" +
-        "Email: " + email + "%0D%0A" +
-        "Phone: " + phone + "%0D%0A" +
-        "Country: " + country + "%0D%0A" +
-        "State: " + state + "%0D%0A" +
-        "Date & Time: " + dateTime + "%0D%0A" +
-        "Description: " + desc;
+    let bodyText =
+`Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Country: ${country}
+State: ${state}
+Date & Time: ${dateTime}
+Description: ${desc}`;
 
-    let toEmail = "by860923@gmail.com";
+    let toEmail = "by860924@gmail.com";
     let subject = "Form Submission";
+    let body = encodeURIComponent(bodyText);
 
     window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
 });
-     </script>
+</script>
 {% endblock %}   
       
