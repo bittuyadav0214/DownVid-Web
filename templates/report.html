@@ -152,5 +152,32 @@
 
 {% block script %}
 <script src={{url_for('static', filename="js/common.js")}} ></script>
+<script>
+document.getElementById("reportForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("ph").value;
+    let country = document.getElementById("cntry").value;
+    let state = document.getElementById("state").value;
+    let dateTime = document.getElementById("dt").value;
+    let desc = document.getElementById("description").value;
+
+    let body =
+        "Name: " + name + "%0D%0A" +
+        "Email: " + email + "%0D%0A" +
+        "Phone: " + phone + "%0D%0A" +
+        "Country: " + country + "%0D%0A" +
+        "State: " + state + "%0D%0A" +
+        "Date & Time: " + dateTime + "%0D%0A" +
+        "Description: " + desc;
+
+    let toEmail = "by860923@gmail.com";
+    let subject = "Form Submission";
+
+    window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
+});
+     </script>
 {% endblock %}   
       
