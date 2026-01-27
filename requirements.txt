@@ -1,4 +1,4 @@
 Flask
 Flask-Limiter
 requests
-yt-dlp==2026.01.25
+yt-dlp
