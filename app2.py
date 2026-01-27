@@ -76,7 +76,7 @@ def downloader(job_id):
             jobs[job_id]["status"] = "Complete✅"
          
             time.sleep(600)
-            files = glob.glob(f"assets/downloads/{job_id}.*")
+            files = glob.glob(f"assets/Downloads/{job_id}.*")
             for file in files:
                 try:
                     if file:
@@ -168,7 +168,7 @@ def preview(job_id):
         return "File not ready", 404
 
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    download_dir = os.path.join(BASE_DIR, "assets","downloads")
+    download_dir = os.path.join(BASE_DIR, "assets","Downloads")
     print("Base dir :",BASE_DIR)
     print("Down d :",download_dir)
 
@@ -201,7 +201,7 @@ def download(job_id):
         return "File not ready", 404
 
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    download_dir = os.path.join(BASE_DIR, "assets","downloads")
+    download_dir = os.path.join(BASE_DIR, "assets","Downloads")
 
     if format == "video":
         filename = job_id + ".mp4"
