@@ -27,13 +27,13 @@ limiter = Limiter(
    app = app,
    default_limits=["551 per days","101 per 5 minute"]
 )
-
+'''
 logging.basicConfig(
   filename = "abuse.log",
   level = logging.WARNING,
   format = "%(asctime)s | %(message)s"
 )
-
+'''
 
 jobs = {}
 delays = [1,0.5,2,1.5,1.8,0.8]
@@ -268,7 +268,7 @@ def block_ip(e):
            ip = request.remote_addr
            path = request.path
            ua = request.headers.get("User-Agent")
-           logging.warning(f"IP : {ip} | PATH : {path} | UA : {ua} | LIMIT EXCEEDED")
+           #logging.warning(f"IP : {ip} | PATH : {path} | UA : {ua} | LIMIT EXCEEDED")
            return render_template("limiter.html"),429  
            
 if __name__ == "__main__":
