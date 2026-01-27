@@ -239,7 +239,7 @@ def debuglog():
     if request.method == "POST":
         username = request.form.get('username').strip()
         password = request.form.get('password').strip()
-        if username == os.environ.get("USERNAME") and password == os.environ.get("PASSWORD"):
+        if username == "bittuyadav0214" and password == "bittuyadav0214!!(^°^)":
            with open("assets/debug.txt","r") as logfile:
                logs = logfile.readlines()
                return logs      
